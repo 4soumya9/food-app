@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from "react";
+
+import Header from "./components/Header";
+import Body from "./components/Body";
+
+import "./index.css";
+
+
+const AppLayout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      <div className="app">
+        <Header />
+        <Body/>
+      </div>
+    
   );
-}
+};
+
+// const appRouter = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <AppLayout />,
+//     errorElement: <Error />,
+//     children: [
+//       { path: "/", element: <Body /> },
+//       { path: "/about", element: <About /> },
+//       { path: "/contact", element: <Contact /> },
+//       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
+//       { path: "/cart", element: <Cart /> },
+//     ],
+//   },
+// ]);
+
+const App = () => {
+  // return <RouterProvider router={appRouter} />;
+  return <AppLayout/>
+};
 
 export default App;
